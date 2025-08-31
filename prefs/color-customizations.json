@@ -1,0 +1,208 @@
+{
+    "editor.tokenColorCustomizations":
+    {
+        "[One Monokai]":
+        {
+            "textMateRules":
+            [
+                {
+                    "scope": "markup.heading.markdown.jira",
+                    "settings":
+                    {
+                        "fontStyle": "",
+                        "foreground": "#D06070"
+                    }
+                },
+                {
+                    "scope": "markup.bold.markdown.jira",
+                    "settings":
+                    {
+                        "foreground": "#0060C0",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "scope": "markup.italic.markdown.jira",
+                    "settings":
+                    {
+                        "foreground": "#80A0FF",
+                        "fontStyle": "italic"
+                    }
+                },
+                {
+                    "scope":
+                    [
+                        "markup.quote.markdown.blockquote.jira",
+                        "markup.quote.markdown.citation.jira",
+                        "entity.name.tag.quote.open.jira",
+                        "entity.name.tag.quote.close.jira",
+                        "entity.name.tag.block.code.open.start.jira",
+                        "entity.name.tag.block.code.open.end.jira",
+                        "entity.name.tag.block.code.close.jira",
+                        "entity.name.tag.block.panel.open.start.jira",
+                        "entity.name.tag.block.panel.open.end.jira",
+                        "entity.name.tag.block.panel.close.jira",
+                        "entity.name.tag.colored.text.open.start.jira",
+                        "entity.name.tag.colored.text.open.end.jira",
+                        "entity.name.tag.colored.text.close.jira",
+                        "entity.name.tag.preformatted.text.open.start.jira",
+                        "entity.name.tag.preformatted.text.open.end.jira",
+                        "entity.name.tag.preformatted.text.close.jira"
+                    ],
+                    "settings":
+                    {
+                        "fontStyle": "",
+                        "foreground": "#00A0A0"
+                    }
+                },
+                {
+                    "scope": "markup.other.markdown.colored.text.jira",
+                    "settings":
+                    {
+                        "foreground": "#006060"
+                    }
+                },
+                {
+                    "scope": "markup.quote.markdown.jira",
+                    "settings":
+                    {
+                        "fontStyle": "italic",
+                        "foreground": "#006060"
+                    }
+                },
+                {
+                    "scope": "markup.deleted.jira",
+                    "settings":
+                    {
+                        "foreground": "#505050",
+                        "fontStyle": "strikethrough"
+                    }
+                },
+                {
+                    "scope":
+                    [
+                        "markup.other.markdown.index.superscript.jira",
+                        "markup.other.markdown.index.subscript.jira"
+                    ],
+                    "settings":
+                    {
+                        "foreground": "#FF8040"
+                    }
+                },
+                {
+                    "scope": "markup.other.markdown.monospaced.jira",
+                    "settings":
+                    {
+                        "foreground": "#D0D060",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "scope":
+                    [
+                        "markup.other.markdown.link.anchor.usage.jira",
+                        "markup.other.markdown.link.anchor.declaration.jira"
+                    ],
+                    "settings":
+                    {
+                        "foreground": "#905000"
+                    }
+                },
+                {
+                    "scope":
+                    [
+                        "markup.other.markdown.link.attachment.jira",
+                        "markup.other.markdown.link.attachment.embeddable.jira"
+                    ],
+                    "settings":
+                    {
+                        "foreground": "#907090"
+                    }
+                },
+                {
+                    "scope":
+                    [
+                        "markup.other.markdown.link.annotated.jira",
+                        "markup.other.markdown.link.file.jira"
+                    ],
+                    "settings":
+                    {
+                        "foreground": "#808000"
+                    }
+                },
+                {
+                    "scope":
+                    [
+                        "markup.other.markdown.table.header.jira"
+                    ],
+                    "settings":
+                    {
+                        "foreground": "#808080",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "scope": "markup.other.markdown.link.mailto.jira",
+                    "settings":
+                    {
+                        "fontStyle": "underline"
+                    }
+                },
+                {
+                    "scope": "markup.other.markdown.link.username.jira",
+                    "settings":
+                    {
+                        "foreground": "#008000"
+                    }
+                },
+                {
+                    "scope": "markup.list.jira",
+                    "settings":
+                    {
+                        "foreground": "#FF60FF"
+                    }
+                },
+                {
+                    "scope": "entity.other.attribute-name.jira",
+                    "settings":
+                    {
+                        "fontStyle": "italic"
+                    }
+                },
+                {
+                    "scope": "entity.other.attribute-value.jira",
+                    "settings":
+                    {
+                        "foreground": "#C0A050"
+                    }
+                },
+                {
+                    "scope": "punctuation.separator.jira",
+                    "settings":
+                    {
+                        "foreground": "#90A0C0"
+                    }
+                },
+                {
+                    "scope": "string.jira",
+                    "settings":
+                    {
+                        "foreground": "#C0A050"
+                    }
+                },
+                {
+                    "scope":
+                    [
+                        "constant.other.colored.text.color.jira",
+                        "constant.other.block.code.language.jira"
+                    ],
+                    "settings":
+                    {
+                        "foreground": "#D06070",
+                        "fontStyle": ""
+                    }
+                }
+            ]
+        }
+    }
+}

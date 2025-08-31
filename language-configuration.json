@@ -1,0 +1,32 @@
+{
+    // symbols that are auto closed when typing
+    "autoClosingPairs":
+    [
+        ["{color}", "{color}"],
+        ["{code}", "{code}"],
+        ["{panel}", "{panel}"],
+        ["{noformat}", "{noformat}"],
+        ["{quote}", "{quote}"],
+        ["{{", "}}"],
+        ["??", "??"],
+        ["[", "]"],
+        ["(", ")"],
+        ["!", "!"],
+        ["\"", "\""],
+    ],
+    // symbols that that can be used to surround a selection
+    "surroundingPairs":
+    [
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["*", "*"],
+        ["_", "_"],
+        ["!", "!"],
+        ["|", "|"],
+        ["-", "-"],
+        ["+", "+"],
+        ["^", "^"],
+        ["~", "~"]
+    ]
+}

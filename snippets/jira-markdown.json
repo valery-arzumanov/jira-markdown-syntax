@@ -1,0 +1,65 @@
+{
+    "colorized-text":
+    {
+        "scope": "jira",
+        "prefix": "color",
+        "body": "{color:double_click_to_set_color}$TM_SELECTED_TEXT{color}",
+        "description": "Set {color} tags around selection"
+    },
+    "monospaced-text":
+    {
+        "scope": "jira",
+        "prefix": "cite",
+        "body": "{{$TM_SELECTED_TEXT}}",
+        "description": "Set monospace text markers around selection"
+    },
+    "put-into-panel":
+    {
+        "scope": "jira",
+        "prefix": "panel",
+        "body": "{panel}$TM_SELECTED_TEXT{panel}",
+        "description": "Interpret selection as a panel"
+    },
+    "interpret-as-code":
+    {
+        "scope": "jira",
+        "prefix": "code",
+        "body": "{code:double_click_to_set_language}$TM_SELECTED_TEXT{code}",
+        "description": "Interpret selection as a code block"
+    },
+    "interpret-as-preformatted":
+    {
+        "scope": "jira",
+        "prefix": "pre",
+        "body": "{noformat}$TM_SELECTED_TEXT{noformat}",
+        "description": "Interpret selection as a preformatted block of text"
+    },
+    "interpret-as-quote":
+    {
+        "scope": "jira",
+        "prefix": "quote",
+        "body": "{quote}$TM_SELECTED_TEXT{quote}",
+        "description": "Interpret selection as a quotation"
+    },
+    "produce-a-table":
+    {
+        "scope": "jira",
+        "prefix": "table",
+        "body": "||Column 1||Column 2||\n|Row 1|Row 1|\n|Row 2|Row 2|",
+        "description": "Produce a table template"
+    },
+    "interpret-as-citation":
+    {
+        "scope": "jira",
+        "prefix": "cite",
+        "body": "??$TM_SELECTED_TEXT??",
+        "description": "Interpret selection as a citation"
+    },
+    "insert-attribute":
+    {
+        "scope": "jira",
+        "prefix": "attr",
+        "body": "|attr=value",
+        "description": "Produce an attribute-value declaration"
+    }
+}

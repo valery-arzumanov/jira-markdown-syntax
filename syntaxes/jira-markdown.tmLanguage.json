@@ -1,0 +1,386 @@
+{
+    "scopeName": "source.jira.markdown",
+    "patterns":
+    [
+        { "include": "#text-bold" },
+        { "include": "#text-italicized" },
+        { "include": "#text-deleted" },
+        { "include": "#text-underlined" },
+        { "include": "#text-superscript" },
+        { "include": "#text-subscript" },
+        { "include": "#text-monospaced" },
+        { "include": "#text-colored" },
+        { "include": "#text-preformatted" },
+        { "include": "#text-in-quotes" },
+        { "include": "#citation" },
+        { "include": "#link-anchor-usage" },
+        { "include": "#link-attachment" },
+        { "include": "#link-annotated" },
+        { "include": "#link-mailto" },
+        { "include": "#link-file" },
+        { "include": "#link-anchor-definition" },
+        { "include": "#link-username" },
+        { "include": "#link-embeddable-attachment" },
+        { "include": "#table-header"},
+        { "include": "#list-marker" },
+        { "include": "#heading" },
+        { "include": "#blockquote" },
+        { "include": "#quotation" },
+        { "include": "#panel" },
+        { "include": "#code-block" }
+    ],
+    "repository":
+    {
+        "heading":
+        {
+            "name": "markup.heading.markdown.jira",
+            "match": "^h[1-6]\\.\\s.+$"
+        },
+        "text-bold":
+        {
+            "name": "markup.bold.markdown.jira",
+            "begin": "(?<=^|[\\^\\s\\[{}(~_])(?<![*#])\\*(?![*#])(?=\\S)",
+            "end": "(?<![*#])(?<=\\S)\\*(?=$|[\\^\\\"\\[\\]\\s|{}().+,:';_])(?!\\*)",
+            "patterns":
+            [
+                { "include": "#text-italicized" },
+                { "include": "#text-in-quotes" },
+                { "include": "#text-monospaced" },
+                { "include": "#text-underlined" },
+                { "include": "#text-colored" }
+            ]
+        },
+        "text-italicized":
+        {
+            "name": "markup.italic.markdown.jira",
+            "begin": "(?<=^|[\\^\\s\\[{}(~*])_(?=\\S)",
+            "end": "(?<=\\S)\\_(?=$|[\\^\\\"\\[\\]\\s|{}().+*,:';_])",
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-in-quotes" },
+                { "include": "#text-monospaced" },
+                { "include": "#text-underlined" },
+                { "include": "#text-colored" }
+            ]
+        },
+        "citation":
+        {
+            "name": "markup.quote.markdown.citation.jira",
+            "match": "\\?{2}.+?\\?{2}"
+        },
+        "text-deleted":
+        {
+            "name": "markup.deleted.jira",
+            "begin": "(?<=^|\\s)-(?=\\S)(?!\\-)",
+            "end": "(?<=\\S)(?<!\\-)-(?=$|[\\s).;,:])"
+        },
+        "text-underlined":
+        {
+            "name": "markup.inserted.jira",
+            "begin": "(?<=^|[\\^\\s\\[(~*_])\\+(?=\\S)",
+            "end": "(?<=\\S)\\+(?=$|[\\^\\\"\\[\\]\\s|{}().+,:';_])",
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-italicized" },
+                { "include": "#text-in-quotes" },
+                { "include": "#text-monospaced" },
+                { "include": "#text-colored" }
+            ]
+        },
+        "text-superscript":
+        {
+            "name": "markup.other.markdown.index.superscript.jira",
+            "begin": "(?<=^|\\s)\\^(?=\\S)",
+            "end": "(?<=\\S)\\^(?=$|[\\\"\\[\\]\\s{}().*,:';])",
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-italicized" },
+                { "include": "#text-underlined" },
+                { "include": "#text-in-quotes" },
+                { "include": "#text-monospaced" },
+                { "include": "#text-colored" }
+            ]
+        },
+        "text-subscript":
+        {
+            "name": "markup.other.markdown.index.subscript.jira",
+            "begin": "(?<=^|\\s)~(?=\\S)",
+            "end": "(?<=\\S)~(?=$|[\\\"\\[\\]\\s{}().*,:';])",
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-italicized" },
+                { "include": "#text-underlined" },
+                { "include": "#text-in-quotes" },
+                { "include": "#text-monospaced" },
+                { "include": "#text-colored" }
+            ]
+        },
+        "text-monospaced":
+        {
+            "name": "markup.other.markdown.monospaced.jira",
+            "begin": "(?<=^|[\\s\\[(*{}_])\\{{2}(?=\\S)",
+            "end": "(?<=\\S)\\}{2}(?=$|[\\^\\\"\\[\\]\\s|{}().+*,:';_])",
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-italicized" },
+                { "include": "#text-underlined" },
+                { "include": "#text-in-quotes" },
+                { "include": "#text-colored" }
+            ]
+        },
+        "blockquote":
+        {
+            "name": "markup.quote.markdown.blockquote.jira",
+            "match": "^bq\\.\\s.+$"
+        },
+        "quotation":
+        {
+            "name": "markup.quote.markdown.jira",
+            "begin": "(?<=^|\\s){quote}",
+            "end": "{quote}(?=$|\\s)",
+            "beginCaptures":
+            {
+                "0": { "name": "entity.name.tag.quote.open.jira" }
+            },
+            "endCaptures":
+            {
+                "0": { "name": "entity.name.tag.quote.close.jira" }
+            },
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-in-quotes" },
+                { "include": "#text-monospaced" }
+            ]
+        },
+        "text-colored":
+        {
+            "name": "markup.other.markdown.colored.text.jira",
+            "begin": "({color)(:)(#[A-F0-9a-f]{6})(})(?=\\S)",
+            "end": "(?<=\\S){color}",
+            "beginCaptures":
+            {
+                "1": { "name": "entity.name.tag.colored.text.open.start.jira" },
+                "2": { "name": "punctuation.separator.jira" },
+                "3": { "name": "constant.other.colored.text.color.jira" },
+                "4": { "name": "entity.name.tag.colored.text.open.end.jira" }
+            },
+            "endCaptures":
+            {
+                "0": { "name": "entity.name.tag.colored.text.close.jira" }
+            },
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-in-quotes" },
+                { "include": "#text-monospaced" }
+            ]
+        },
+        "link-anchor-usage":
+        {
+            "name": "markup.other.markdown.link.anchor.usage.jira",
+            "match": "\\[#.+?\\]"
+        },
+        "link-attachment":
+        {
+            "name": "markup.other.markdown.link.attachment.jira",
+            "match": "\\[\\^.+?\\]"
+        },
+        "link-annotated":
+        {
+            "name": "markup.other.markdown.link.annotated.jira",
+            "begin": "\\[(?!([\\^\\[~#]|mailto:|file:///))",
+            "end": "\\|https?://.+?\\]",
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-italicized" },
+                { "include": "#text-monospaced" },
+                { "include": "#text-in-quotes" }
+            ]
+        },
+        "link-mailto":
+        {
+            "name": "markup.other.markdown.link.mailto.jira",
+            "match": "\\[mailto:.+?\\]"
+        },
+        "link-file":
+        {
+            "name": "markup.other.markdown.link.file.jira",
+            "match": "\\[file:///.+?\\]"
+        },
+        "link-anchor-definition":
+        {
+            "name": "markup.other.markdown.link.anchor.declaration.jira",
+            "match": "\\{anchor:.+?\\}"
+        },
+        "link-username":
+        {
+            "name": "markup.other.markdown.link.username.jira",
+            "match": "\\[~.+?\\]"
+        },
+        "list-marker":
+        {
+            "name": "markup.list.jira",
+            "match": "^(\\*+|#+|\\*#+|#\\*+|-)\\s"
+        },
+        "link-embeddable-attachment":
+        {
+            "name": "markup.other.markdown.link.attachment.embeddable.jira",
+            "begin": "(?<=^|\\s)!",
+            "end": "!(?=$|\\s)",
+            "patterns":
+            [
+                { "include": "#dataset-pair" },
+                { "include": "#separator" }
+            ]
+        },
+        "table-header":
+        {
+            "name": "markup.other.markdown.table.header.jira",
+            "begin": "^\\|\\|",
+            "end": "\\|\\|$",
+            "beginCaptures":
+            {
+                "0": { "name": "punctuation.separator.jira" }
+            },
+            "endCaptures":
+            {
+                "0": { "name": "punctuation.separator.jira" }
+            },
+            "patterns":
+            [
+                { "include": "#separator" }
+            ]
+        },
+        "panel":
+        {
+            "name": "markup.other.markdown.block.panel.jira",
+            "begin": "(?<=^|\\s)({panel)((})|(:)([^}]+)(}))",
+            "end": "{panel}(?=$|\\s)",
+            "beginCaptures":
+            {
+                "1": { "name": "entity.name.tag.block.panel.open.start.jira" },
+                "3": { "name": "entity.name.tag.block.panel.open.end.jira" },
+                "4": { "name": "punctuation.separator.jira" },
+                "5":
+                {
+                    "name": "entity.name.tag.block.panel.attributes.jira",
+                    "patterns":
+                    [
+                        { "include": "#dataset-pair" },
+                        { "include": "#separator" }
+                    ]
+                },
+                "6": { "name": "entity.name.tag.block.panel.open.end.jira" }
+            },
+            "endCaptures":
+            {
+                "0": { "name": "entity.name.tag.block.panel.close.jira" }
+            },
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-italicized" },
+                { "include": "#text-underlined" },
+                { "include": "#text-in-quotes" },
+                { "include": "#text-monospaced" },
+                { "include": "#text-colored" }
+            ]
+        },
+        "text-preformatted":
+        {
+            "name": "markup.other.markdown.preformatted.text.jira",
+            "begin": "(?<=^|\\s)({noformat)((})|:([^}]+)(}))",
+            "end": "{noformat}(?=$|\\s)",
+            "beginCaptures":
+            {
+                "1": { "name": "entity.name.tag.preformatted.text.open.start.jira" },
+                "3": { "name": "entity.name.tag.preformatted.text.open.end.jira" },
+                "4":
+                {
+                    "name": "entity.name.tag.preformatted.text.attributes.jira",
+                    "patterns":
+                    [
+                        { "include": "#dataset-pair" }
+                    ]
+                },
+                "5": { "name": "entity.name.tag.preformatted.text.open.end.jira" }
+            },
+            "endCaptures":
+            {
+                "0": { "name": "entity.name.tag.preformatted.text.close.jira" }
+            }
+        },
+        "code-block":
+        {
+            "name": "markup.other.markdown.block.code.jira",
+            "begin": "(?<=^|\\s)({code)((:)(actionscript|ada|applescript|bash|c|c#|c\\+\\+|cpp|css|erlang|go|groovy|haskell|html|java|javascript|js|json|lua|none|nyan|objc|perl|php|python|r|rainbow|ruby|scala|sh|sql|swift|visualbasic|xml|yaml0))?([^}]+)?(})",
+            "end": "{code}(?=$|\\s)",
+            "beginCaptures":
+            {
+                "1": { "name": "entity.name.tag.block.code.open.start.jira" },
+                "3": { "name": "punctuation.separator.jira" },
+                "4": { "name": "constant.other.block.code.language.jira" },
+                "5":
+                {
+                    "name": "entity.name.tag.block.code.attributes.jira",
+                    "patterns":
+                    [
+                        { "include": "#dataset-pair" },
+                        { "include": "#separator" }
+                    ]
+                },
+                "6": { "name": "entity.name.tag.block.code.open.end.jira" },
+                "7": { "name": "entity.name.tag.block.code.open.end.jira" }
+            },
+            "endCaptures":
+            {
+                "0": { "name": "entity.name.tag.block.code.close.jira" }
+            }
+        },
+        "text-in-quotes":
+        {
+            "name": "string.jira",
+            "begin": "\\\"(?=\\S)",
+            "end": "(?<=\\S)\\\"",
+            "patterns":
+            [
+                { "include": "#text-bold" },
+                { "include": "#text-italicized" },
+                { "include": "#text-underlined" },
+                { "include": "#text-quoted" },
+                { "include": "#text-monospaced" },
+                { "include": "#text-colored" }
+            ]
+        },
+        "dataset-pair":
+        {
+            "name": "markup.other.markdown.dataset.pair.jira",
+            "match": "([a-zA-Z]+)(=)([A-Za-z0-9\\\"\\s#]+)",
+            "captures":
+            {
+                "1": { "name": "entity.other.attribute-name.jira" },
+                "2":
+                {
+                    "name": "entity.other.operator",
+                    "patterns":
+                    [
+                        { "include": "#separator" }
+                    ]
+                },
+                "3": { "name": "entity.other.attribute-value.jira" }
+            }
+        },
+        "separator":
+        {
+            "name": "punctuation.separator.jira",
+            "match": "[|=:^/,]"
+        }
+    }
+}
