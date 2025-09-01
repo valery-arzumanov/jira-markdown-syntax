@@ -3,7 +3,7 @@
     {
         "scope": "jira",
         "prefix": "color",
-        "body": "{color:double_click_to_set_color}$TM_SELECTED_TEXT{color}",
+        "body": "{color:double_click_to_define_color}$TM_SELECTED_TEXT{color}",
         "description": "Set {color} tags around selection"
     },
     "monospaced-text":
@@ -24,7 +24,7 @@
     {
         "scope": "jira",
         "prefix": "code",
-        "body": "{code:double_click_to_set_language}$TM_SELECTED_TEXT{code}",
+        "body": "{code:double_click_to_define_language}$TM_SELECTED_TEXT{code}",
         "description": "Interpret selection as a code block"
     },
     "interpret-as-preformatted":
@@ -55,11 +55,11 @@
         "body": "??$TM_SELECTED_TEXT??",
         "description": "Interpret selection as a citation"
     },
-    "insert-attribute":
+    "append-attribute":
     {
         "scope": "jira",
         "prefix": "attr",
         "body": "|attr=value",
-        "description": "Produce an attribute-value declaration"
+        "description": "Append an attribute-value declaration"
     }
 }

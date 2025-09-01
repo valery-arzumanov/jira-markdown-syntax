@@ -13,6 +13,7 @@
     ],
     "main": "./out/extension.js",
     "license": "MIT",
+    "icon": "./icons/jira-markdown-vscode.webp",
     "repository":
     {
         "type": "git",
