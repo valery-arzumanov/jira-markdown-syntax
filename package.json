@@ -1,5 +1,10 @@
 {
     "name": "jira-markdown-syntax",
+    "publisher": "valery-arzumanov",
+    "author":
+    {
+        "name": "Valery Arzumanov"
+    },
     "displayName": "JIRA Markdown Syntax",
     "description": "JIRA Markdown Syntax",
     "version": "0.0.2",
