@@ -43,6 +43,13 @@ There are also 3 items, which are not directly mentioned on Atlassian site, but 
 ### Item folding
 The items, the content of which is supposed to take up several lines (including the tags), support folding. These are quotations (`{quote}`), code blocks (`{code}`), panels (`{panel}`) and preformatted text blocks (`{noformat}`). It does not matter whether they have attributes or not — the folding works anyway.
 
+### Snippets
+The extension provides several snippets. They may be divided in two groups: _standalone_ and _attachable_.
+
+_Attachable_ snippets are supposed to be used on a portion of text, selected by user. However, it is not an inescapable requirement — if no text is selected, the tags or markers will still be added, but there will be nothing between them; otherwise they will surround the selection. These include all of the above-mentioned _"composite"_ items as well as monospaced text blocks and citations.
+
+_Standalone_ snippets, on the contrary, require no selection — they will be inserted in-place if the corresponding command is executed. Moreover, if there is text selected, it will be **replaced** with a snippet (attention!). These include table templates and attribute-value pairs.
+
 ## Limitations
 There exist certain downsides. It seems noteworthy to enumerate them:
 1. About a third of colors and styles are needed to be defined manually, as it has been already mentioned above.
