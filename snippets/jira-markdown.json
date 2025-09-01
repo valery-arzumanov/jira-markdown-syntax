@@ -9,7 +9,7 @@
     "monospaced-text":
     {
         "scope": "jira",
-        "prefix": "cite",
+        "prefix": "mono",
         "body": "{{$TM_SELECTED_TEXT}}",
         "description": "Set monospace text markers around selection"
     },
