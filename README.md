@@ -7,6 +7,7 @@
 - [Functionality](#functionality)
     - [Defined scopes](#defined_scopes)
     - [Item folding](#item-folding)
+    - [Snippets](#snippets)
 - [Limitations](#limitations)
 
 ## Preamble
