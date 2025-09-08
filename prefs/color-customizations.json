@@ -17,7 +17,7 @@
                     "scope": "markup.bold.markdown.jira",
                     "settings":
                     {
-                        "foreground": "#0060C0",
+                        "foreground": "#0080FF",
                         "fontStyle": "bold"
                     }
                 },
@@ -59,7 +59,7 @@
                     "scope": "markup.other.markdown.colored.text.jira",
                     "settings":
                     {
-                        "foreground": "#006060"
+                        "foreground": "#008000"
                     }
                 },
                 {
@@ -67,7 +67,7 @@
                     "settings":
                     {
                         "fontStyle": "italic",
-                        "foreground": "#006060"
+                        "foreground": "#008000"
                     }
                 },
                 {
@@ -152,7 +152,7 @@
                     "scope": "markup.other.markdown.link.username.jira",
                     "settings":
                     {
-                        "foreground": "#008000"
+                        "foreground": "#C02D00"
                     }
                 },
                 {
@@ -166,6 +166,7 @@
                     "scope": "entity.other.attribute-name.jira",
                     "settings":
                     {
+                        "foreground": "#90C070",
                         "fontStyle": "italic"
                     }
                 },
